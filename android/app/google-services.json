@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "34611545604",
+    "project_id": "home-services-7d22e",
+    "storage_bucket": "home-services-7d22e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:34611545604:android:97856755853d69a8fd5751",
+        "android_client_info": {
+          "package_name": "com.example.day35"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "34611545604-l710vukj9ua53jrhvoqq74kn716187vb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtjA6OFaoWeweAkXJB15_edByfRiZmV6U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "34611545604-l710vukj9ua53jrhvoqq74kn716187vb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
