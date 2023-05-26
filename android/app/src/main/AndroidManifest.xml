@@ -5,7 +5,6 @@
     <application
         android:label="Home Service"
         android:icon="@mipmap/launcher_icon">
-        android:usesCleartextTraffic="true"
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
