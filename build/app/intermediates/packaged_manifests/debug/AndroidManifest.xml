@@ -30,8 +30,8 @@
         android:name="androidx.multidex.MultiDexApplication"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="day35" >
+        android:icon="@mipmap/launcher_icon"
+        android:label="Home Service" >
         <activity
             android:name="com.example.day35.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"

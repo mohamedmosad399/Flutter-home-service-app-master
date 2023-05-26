@@ -44,10 +44,10 @@
 31        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 31-->[androidx.core:core:1.6.0] C:\Users\Sawah\.gradle\caches\transforms-2\files-2.1\3043de04e01f5eaa2da7f00b99c95099\core-1.6.0\AndroidManifest.xml:24:18-86
 32        android:debuggable="true"
-33        android:icon="@mipmap/ic_launcher"
-33-->C:\Users\Sawah\Desktop\Flutter-home-service-app-master\android\app\src\main\AndroidManifest.xml:7:9-43
-34        android:label="day35" >
-34-->C:\Users\Sawah\Desktop\Flutter-home-service-app-master\android\app\src\main\AndroidManifest.xml:6:9-30
+33        android:icon="@mipmap/launcher_icon"
+33-->C:\Users\Sawah\Desktop\Flutter-home-service-app-master\android\app\src\main\AndroidManifest.xml:7:9-45
+34        android:label="Home Service" >
+34-->C:\Users\Sawah\Desktop\Flutter-home-service-app-master\android\app\src\main\AndroidManifest.xml:6:9-37
 35        <activity
 35-->C:\Users\Sawah\Desktop\Flutter-home-service-app-master\android\app\src\main\AndroidManifest.xml:8:9-36:20
 36            android:name="com.example.day35.MainActivity"

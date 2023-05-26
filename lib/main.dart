@@ -1,4 +1,5 @@
 import 'package:day35/pages/home.dart';
+import 'package:day35/pages/login.dart';
 import 'package:day35/pages/select_service.dart';
 import 'package:day35/pages/start.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: StartPage(),
+      home: LoginPage(),
       debugShowCheckedModeBanner: false,
     );
   }

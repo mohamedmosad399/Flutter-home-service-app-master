@@ -111,9 +111,9 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Sa
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.6.0] C:\Users\Sawah\.gradle\caches\transforms-2\files-2.1\3043de04e01f5eaa2da7f00b99c95099\core-1.6.0\AndroidManifest.xml:24:18-86
 	android:label
-		ADDED from C:\Users\Sawah\Desktop\Flutter-home-service-app-master\android\app\src\main\AndroidManifest.xml:6:9-30
+		ADDED from C:\Users\Sawah\Desktop\Flutter-home-service-app-master\android\app\src\main\AndroidManifest.xml:6:9-37
 	android:icon
-		ADDED from C:\Users\Sawah\Desktop\Flutter-home-service-app-master\android\app\src\main\AndroidManifest.xml:7:9-43
+		ADDED from C:\Users\Sawah\Desktop\Flutter-home-service-app-master\android\app\src\main\AndroidManifest.xml:7:9-45
 activity#com.example.day35.MainActivity
 ADDED from C:\Users\Sawah\Desktop\Flutter-home-service-app-master\android\app\src\main\AndroidManifest.xml:8:9-36:20
 	android:launchMode
