@@ -1,7 +1,12 @@
+import 'package:day35/controllers/navigators.dart';
+import 'package:day35/controllers/toast_handler.dart';
 import 'package:day35/pages/home.dart';
 import 'package:day35/pages/register.dart';
 import 'package:day35/pages/start.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
+import '../controllers/auth_service.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -11,6 +16,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  final AuthService _auth = AuthService();
 
   @override
   Widget build(BuildContext context) {
@@ -43,15 +49,13 @@ class _LoginPageState extends State<LoginPage> {
               ),
               SizedBox(height: 32.0),
               MaterialButton(
-                onPressed: () {
-                   Navigator.push(context,MaterialPageRoute(
-                            builder: (context) => StartPage(),
-                          ));
-
+                onPressed: ()async {
                   // Perform login
-                  String email = emailController.text;
-                  String password = passwordController.text;
-                  print("Email: $email\nPassword: $password");
+                 User? user =await  _auth.signInWithEmailAndPassword(emailController.text, passwordController.text);
+                  if(user!=null){
+                    showToast("Success Login", true);
+                    navigateAndFinish(context, StartPage());
+                  }
                 },
                 child: Text("Login",style: TextStyle(color: Colors.white),),
                 color: Colors.black,

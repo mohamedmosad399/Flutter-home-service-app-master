@@ -1,5 +1,11 @@
+import 'package:day35/controllers/toast_handler.dart';
 import 'package:day35/pages/login.dart';
+import 'package:day35/pages/start.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
+import '../controllers/auth_service.dart';
+import '../controllers/navigators.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -11,7 +17,7 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-
+  final AuthService _auth = AuthService();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,10 +34,8 @@ class _RegisterPageState extends State<RegisterPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                            Image.network('https://firebasestorage.googleapis.com/v0/b/home-services-7d22e.appspot.com/o/logo.jpg?alt=media&token=63f5844b-2985-4a27-89d5-06dc740ca1ef'),
-              
-                            
-
+                Image.network(
+                    'https://firebasestorage.googleapis.com/v0/b/home-services-7d22e.appspot.com/o/logo.jpg?alt=media&token=63f5844b-2985-4a27-89d5-06dc740ca1ef'),
                 TextFormField(
                   controller: _usernameController,
                   decoration: InputDecoration(
@@ -53,7 +57,8 @@ class _RegisterPageState extends State<RegisterPage> {
                     if (value!.isEmpty) {
                       return 'Please enter your email';
                     }
-                    if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(value)) {
+                    if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$')
+                        .hasMatch(value)) {
                       return 'Please enter a valid email';
                     }
                     return null;
@@ -78,26 +83,33 @@ class _RegisterPageState extends State<RegisterPage> {
                 SizedBox(height: 16.0),
                 MaterialButton(
                   color: Colors.black,
-                  onPressed: () {
+                  onPressed: () async{
                     if (_formKey.currentState!.validate()) {
                       // Implement registration logic here
-                      String username = _usernameController.text;
-                      String email = _emailController.text;
-                      String password = _passwordController.text;
-                      print('Registering user $username with email $email and password $password');
+                     User? user =  await _auth.registerWithEmailAndPassword(_emailController.text, _passwordController.text);
+                    if(user!=null){
+                      showToast("Success Register",true);
+                      navigateAndFinish(context, StartPage());
+                    }
                     }
                   },
-                  child: Text('Register',style: TextStyle(color: Colors.white),),
+                  child: Text(
+                    'Register',
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
-                SizedBox(height: 5,),
-                 GestureDetector(
-              onTap: (){
-                Navigator.push(context,MaterialPageRoute(
+                SizedBox(
+                  height: 5,
+                ),
+                GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
                             builder: (context) => LoginPage(),
                           ));
-              },
-              child: Text('You Dont Have An Acount LogIn Now'))
-              
+                    },
+                    child: Text('You Dont Have An Acount LogIn Now'))
               ],
             ),
           ),

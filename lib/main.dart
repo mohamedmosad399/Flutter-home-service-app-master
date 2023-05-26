@@ -2,6 +2,7 @@ import 'package:day35/pages/home.dart';
 import 'package:day35/pages/login.dart';
 import 'package:day35/pages/select_service.dart';
 import 'package:day35/pages/start.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
