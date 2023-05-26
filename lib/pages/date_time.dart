@@ -373,51 +373,51 @@ class _DateAndTimeState extends State<DateAndTime> {
                 )
               ),
               SizedBox(height: 40,),
-              FadeAnimation(1.4, Text("Additional Service", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),)),
-              SizedBox(height: 10,),
-              Container(
-                height: 120,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.white,
-                ),
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: _exteraCleaning.length,
-                  itemBuilder: (context, index) {
-                    return GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          if (_selectedExteraCleaning.contains(index)) {
-                            _selectedExteraCleaning.remove(index);
-                          } else {
-                            _selectedExteraCleaning.add(index);
-                          }
-                        });
-                      },
-                      child: FadeAnimation((1.4 + index) / 4, Container(
-                        width: 110,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: _selectedExteraCleaning.contains(index) ? Colors.blue.shade400 : Colors.transparent,
-                        ),
-                        margin: EdgeInsets.only(right: 20),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Image.network(_exteraCleaning[index][1], height: 40,),
-                            SizedBox(height: 10,),
-                            Text(_exteraCleaning[index][0], style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500, color: _selectedExteraCleaning.contains(index) ? Colors.white : Colors.grey.shade800),),
-                            SizedBox(height: 5,),
-                            Text("+${_exteraCleaning[index][2]}\$", style: TextStyle(color: Colors.black),)
-                          ],
-                        )
-                      ))
-                    );
-                  },  
-                )
-              ),
+              // FadeAnimation(1.4, Text("Additional Service", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),)),
+              // SizedBox(height: 10,),
+              // Container(
+              //   height: 120,
+              //   decoration: BoxDecoration(
+              //     borderRadius: BorderRadius.circular(10),
+              //     color: Colors.white,
+              //   ),
+              //   child: ListView.builder(
+              //     scrollDirection: Axis.horizontal,
+              //     itemCount: _exteraCleaning.length,
+              //     itemBuilder: (context, index) {
+              //       return GestureDetector(
+              //         onTap: () {
+              //           setState(() {
+              //             if (_selectedExteraCleaning.contains(index)) {
+              //               _selectedExteraCleaning.remove(index);
+              //             } else {
+              //               _selectedExteraCleaning.add(index);
+              //             }
+              //           });
+              //         },
+              //         child: FadeAnimation((1.4 + index) / 4, Container(
+              //           width: 110,
+              //           decoration: BoxDecoration(
+              //             borderRadius: BorderRadius.circular(15),
+              //             color: _selectedExteraCleaning.contains(index) ? Colors.blue.shade400 : Colors.transparent,
+              //           ),
+              //           margin: EdgeInsets.only(right: 20),
+              //           child: Column(
+              //             mainAxisAlignment: MainAxisAlignment.center,
+              //             crossAxisAlignment: CrossAxisAlignment.center,
+              //             children: [
+              //               Image.network(_exteraCleaning[index][1], height: 40,),
+              //               SizedBox(height: 10,),
+              //               Text(_exteraCleaning[index][0], style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500, color: _selectedExteraCleaning.contains(index) ? Colors.white : Colors.grey.shade800),),
+              //               SizedBox(height: 5,),
+              //               Text("+${_exteraCleaning[index][2]}\$", style: TextStyle(color: Colors.black),)
+              //             ],
+              //           )
+              //         ))
+              //       );
+              //     },
+              //   )
+              // ),
             ],
           ), 
         ),
