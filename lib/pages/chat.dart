@@ -66,31 +66,26 @@ class _ChatState extends State<Chat> {
               },
               decoration: InputDecoration(
                   hintText: 'Send Message...',
-                  suffixIcon: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      IconButton(
-                          onPressed: ()async{
-                            //1) Here function to share location
-                            Position currentPosition = await locationService.shareLocation();
-                            users.add(({
-                              'long':currentPosition.longitude,
-                              'lat':currentPosition.latitude,
-                              'createdAt':DateTime.now()
-                            }));
-                          }, icon: Icon(Icons.share_location)
-                      ),
-                      IconButton(
-                          onPressed: () {
-                            users.add({
-                              'text': text.text,
-                              'createdAt': DateTime.now(),
-                            });
-                            text.clear();
-                          },
-                          icon: const Icon(Icons.arrow_forward_ios_sharp)
-                      ),
-                    ],
+                  prefixIcon:   IconButton(
+                      onPressed: ()async{
+                        //1) Here function to share location
+                        Position currentPosition = await locationService.shareLocation();
+                        users.add(({
+                          'long':currentPosition.longitude,
+                          'lat':currentPosition.latitude,
+                          'createdAt':DateTime.now()
+                        }));
+                      }, icon: Icon(Icons.share_location)
+                  ),
+                  suffixIcon:   IconButton(
+                      onPressed: () {
+                        users.add({
+                          'text': text.text,
+                          'createdAt': DateTime.now(),
+                        });
+                        text.clear();
+                      },
+                      icon: const Icon(Icons.arrow_forward_ios_sharp)
                   ),
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20))),

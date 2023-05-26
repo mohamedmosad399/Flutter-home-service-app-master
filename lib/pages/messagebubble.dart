@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:latlong2/latlong.dart';
 
+import '../components/map_button.dart';
+
 class MessageBubble extends StatelessWidget {
   final Stream<QuerySnapshot> data = FirebaseFirestore.instance
       .collection('cl')
@@ -36,7 +38,7 @@ class MessageBubble extends StatelessWidget {
               var lat = dataMap['lat'];
               return Align(
                 alignment: Alignment.centerRight,
-                child: Container(
+                child:text !=null? Container(
                   padding: const EdgeInsets.only(
                       left: 15, top: 20, bottom: 20, right: 20),
                   decoration: BoxDecoration(
@@ -47,13 +49,14 @@ class MessageBubble extends StatelessWidget {
                       bottomLeft: Radius.circular(32),
                     ),
                   ),
-                  child: text != null
-                      ? Text(
+                  child:Text(
                     text != null ? text : "--",
                     style: const TextStyle(color: Colors.white),
                   )
-                      : Text("Long : $long" + "Lat : $lat"),
-                ),
+                ) :lat !=null && lat !=null? MapButtonWidget(
+                latitude: lat,
+                longitude: long,
+              ):const SizedBox.shrink(),
               );
             },
             separatorBuilder: (context, index) => const SizedBox(height: 5),
